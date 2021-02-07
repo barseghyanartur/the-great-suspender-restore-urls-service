@@ -8,6 +8,7 @@ const routes: Array<RouteConfig> = [
     path: '/index.html',
     name: 'Clean Data',
     component: () => import('../views/CleanData.vue'),
+    alias: '/',
   },
   {
     path: '/about.html',

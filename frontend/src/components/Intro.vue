@@ -21,6 +21,7 @@
           are OK with that, just pass by. Otherwise, read further.
           </p>
           <h2>How to fix the broken tabs</h2>
+          <h3>Locally (with Python)</h3>
           <p>
           1. Use the <a href="https://chrome.google.com/webstore/detail/freshstart-cross-browser/nmidkjogcjnnlfimjcedenagjfacpobb">FreshStart - Cross Browser Session Manager</a>
              extension to export all your tabs into a JSON and save it into a file (for
@@ -44,6 +45,22 @@
           4. Use the <a href="https://chrome.google.com/webstore/detail/freshstart-cross-browser/nmidkjogcjnnlfimjcedenagjfacpobb">FreshStart - Cross Browser Session Manager</a>
              to import the tabs back (paste the contents of the <u>tabs-restored.json</u>
              in the import session window).
+          </p>
+          <h3>Online (this service)</h3>
+          <p>
+          1. Use the <a href="https://chrome.google.com/webstore/detail/freshstart-cross-browser/nmidkjogcjnnlfimjcedenagjfacpobb">FreshStart - Cross Browser Session Manager</a>
+             extension to export all your tabs into a JSON and save it into a file (for
+             instance, name it <u>tabs.json</u>).
+          </p>
+          <p>
+            2. Paste the contents of the <u>tabs.json</u> in the <u>Data</u> field
+               <router-link to="/index.html">here</router-link> and press submit to fix your
+               broken tabs.
+          </p>
+          <p>
+          3. Use the <a href="https://chrome.google.com/webstore/detail/freshstart-cross-browser/nmidkjogcjnnlfimjcedenagjfacpobb">FreshStart - Cross Browser Session Manager</a>
+             to import the tabs back (paste the contents of the <u>Cleaned Data</u> in the import
+             session window).
           </p>
 
         </b-col>
