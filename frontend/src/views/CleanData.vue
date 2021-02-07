@@ -9,7 +9,7 @@ import Vue from 'vue';
 import ApiCleanData from '@/components/ApiCleanData.vue'; // @ is an alias to /src
 
 export default Vue.extend({
-  name: 'SendInvite',
+  name: 'CleanData',
   components: {
     ApiCleanData,
   },
