@@ -1,0 +1,42 @@
+version: '3.0'
+
+services:
+  api:
+    container_name: the_great_suspender_restore_urls_api
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    entrypoint: /entrypoint.sh
+#    env_file:
+#      - ./.env.development
+    volumes:
+      - ./backend/entrypoints/api.sh:/entrypoint.sh
+      - ./backend:/usr/src/app
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=dev
+      - TESTING=0
+    stdin_open: true
+    tty: true
+
+  ui:
+    container_name: the_great_suspender_restore_urls_ui
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    entrypoint: /entrypoint.sh
+    env_file:
+      - ./frontend/.env.development
+    volumes:
+      - ./frontend/entrypoint.sh:/entrypoint.sh
+      - ./frontend:/usr/src/app
+    ports:
+      - "8080:8080"
+    environment:
+      - ENVIRONMENT=dev
+      - TESTING=0
+      - VUE_APP_API_HOST=http://localhost
+      - VUE_APP_API_PORT=8000
+    stdin_open: true
+    tty: true

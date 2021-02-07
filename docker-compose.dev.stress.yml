@@ -1,0 +1,21 @@
+version: '3.0'
+
+services:
+  stress:
+    domainname: the_great_suspender_restore_urls_stress
+    hostname: the_great_suspender_restore_urls_stress
+    container_name: the_great_suspender_restore_urls_stress
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    entrypoint: /entrypoint.sh
+    volumes:
+      - ./backend/entrypoints/stress.sh:/entrypoint.sh
+      - ./backend:/usr/src/app
+    ports:
+      - "8089:8089"
+    environment:
+      - ENVIRONMENT=dev
+      - TESTING=0
+    stdin_open: true
+    tty: true
