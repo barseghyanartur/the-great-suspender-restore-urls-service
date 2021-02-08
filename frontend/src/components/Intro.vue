@@ -62,7 +62,16 @@
              to import the tabs back (paste the contents of the <u>Cleaned Data</u> in the import
              session window).
           </p>
-
+          <h2>Links</h2>
+          <b-list-group>
+            <b-list-group-item>
+              <a href="https://github.com/barseghyanartur/the-great-suspender-restore-urls-service">Source code</a> of this service (FastAPI + VueJS)
+            </b-list-group-item>
+            <b-list-group-item>
+              <a href="https://github.com/barseghyanartur/the-great-suspender-restore-urls">Source code </a>
+              of the <a href="https://pypi.org/project/the-great-suspender-restore-urls/">the-great-suspender-restore-urls</a> package
+            </b-list-group-item>
+          </b-list-group>
         </b-col>
       </b-row>
     </b-container>

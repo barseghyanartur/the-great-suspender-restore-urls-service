@@ -4,7 +4,7 @@ from typing import Union
 from fastapi import FastAPI, Body
 from fastapi.middleware.cors import CORSMiddleware
 
-from thegreatsuspender import clean_data, SESSION_NAME_SUFFIX
+from thegreatsuspender import clean_data, SESSION_NAME_SUFFIX, EXTENSION_ID
 
 
 app = FastAPI()
@@ -38,11 +38,22 @@ async def clean_json_data(
                     f"`{SESSION_NAME_SUFFIX}`.",
         alias="sessionNameSuffix"
     ),
+    extension_id: str = Body(
+        None,
+        title="ID of ``The Great Suspender`` extension.",
+        description=f"Defaults to "
+                    f"`{EXTENSION_ID}`.",
+        alias="extensionId"
+    ),
 ):
     """Clean tabs data exported with FreshStart - Cross Browser Session
     Manager.
     """
     if not isinstance(data, dict):
         data = json.loads(data)
-    cleaned_data = clean_data(data, session_name_suffix=session_name_suffix)
+    cleaned_data = clean_data(
+        data,
+        session_name_suffix=session_name_suffix,
+        extension_id=extension_id,
+    )
     return cleaned_data

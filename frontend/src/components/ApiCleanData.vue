@@ -46,6 +46,18 @@
               ></b-form-input>
             </b-form-group>
 
+            <b-form-group id="extensionId-group"
+                          label="Extension ID:"
+                          label-for="extensionId">
+              <b-form-input
+                id="extensionId"
+                v-model="extensionId"
+                placeholder="ID of ``The Great Suspender`` extension"
+              ></b-form-input>
+            </b-form-group>
+
+            <b-button variant="primary" type="submit">Submit</b-button>
+            <hr v-if="cleanedData"/>
             <b-form-group v-if="cleanedData"
                           id="cleanedData-group"
                           label="Cleaned Data:"
@@ -62,7 +74,9 @@
               ></b-form-textarea>
             </b-form-group>
 
-            <b-button variant="primary" type="submit">Submit</b-button>
+            <b-button v-if="cleanedData" v-clipboard="() => cleanedData">
+              Copy to clipboard
+            </b-button>
 
           </b-form>
 
@@ -90,6 +104,7 @@ export default Vue.extend({
       data: null as string | null,
       sessionNameSuffix: null as string | null,
       cleanedData: null as string | null,
+      extensionId: null as string | null,
       errors: [] as string[],
       status: StatusUnknown as number,
     };
@@ -102,6 +117,7 @@ export default Vue.extend({
         const payload = {
           data: this.data,
           sessionNameSuffix: this.sessionNameSuffix,
+          extensionId: this.extensionId,
         };
         axios.post(`${apiBaseUrl}/clean-data/`, payload)
           .then((response) => {

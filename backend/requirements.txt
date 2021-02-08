@@ -1,4 +1,4 @@
 uvicorn  # lightning-fast ASGI server implementation
 fastapi  # high performance API framework
 locust  # load testing tool
-the-great-suspender-restore-urls>=0.2  # it's all about this one
+the-great-suspender-restore-urls>=0.3  # it's all about this one
