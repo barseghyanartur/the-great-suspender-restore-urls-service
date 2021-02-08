@@ -18,17 +18,19 @@
           <div v-else-if="statusInProgress()">
             <b-alert variant="info" show>Processing...</b-alert>
           </div>
-
+          <div class="mb-4">
+            <i class="float-right">Fields marked with asterisks (*) are required</i>
+          </div>
           <b-form class="clean-data-form"
                   v-on:submit.prevent="onSubmit">
 
             <b-form-group id="data-group"
-                          label="Data:"
+                          label="Data *:"
                           label-for="data">
               <b-form-textarea
                 id="data"
                 v-model="data"
-                placeholder="Data"
+                placeholder=""
                 rows="15"
                 max-rows="15"
                 cols="15"
@@ -42,17 +44,17 @@
               <b-form-input
                 id="sessionNameSuffix"
                 v-model="sessionNameSuffix"
-                placeholder="Session name prefix"
+                placeholder=" - fixed"
               ></b-form-input>
             </b-form-group>
 
             <b-form-group id="extensionId-group"
-                          label="Extension ID:"
+                          label="ID of The Great Suspender extension:"
                           label-for="extensionId">
               <b-form-input
                 id="extensionId"
                 v-model="extensionId"
-                placeholder="ID of ``The Great Suspender`` extension"
+                placeholder="klbibkeccnjlkjkiokjodocebajanakg"
               ></b-form-input>
             </b-form-group>
 
