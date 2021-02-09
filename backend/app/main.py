@@ -4,7 +4,7 @@ from typing import Union
 from fastapi import FastAPI, Body
 from fastapi.middleware.cors import CORSMiddleware
 
-from thegreatsuspender import clean_data, SESSION_NAME_SUFFIX, EXTENSION_ID
+from thegreatsuspender import clean_data, re_clean_data, SESSION_NAME_SUFFIX
 
 
 app = FastAPI()
@@ -41,8 +41,8 @@ async def clean_json_data(
     extension_id: str = Body(
         None,
         title="ID of ``The Great Suspender`` extension.",
-        description=f"Defaults to "
-                    f"`{EXTENSION_ID}`.",
+        description=f"If you leave this argument out, regular expression "
+                    f"match will be used.",
         alias="extensionId"
     ),
 ):
@@ -51,9 +51,17 @@ async def clean_json_data(
     """
     if not isinstance(data, dict):
         data = json.loads(data)
-    cleaned_data = clean_data(
-        data,
-        session_name_suffix=session_name_suffix,
-        extension_id=extension_id,
-    )
+
+    if extension_id:
+        cleaned_data = clean_data(
+            data,
+            session_name_suffix=session_name_suffix,
+            extension_id=extension_id,
+        )
+    else:
+        cleaned_data = re_clean_data(
+            data,
+            session_name_suffix=session_name_suffix,
+        )
+
     return cleaned_data

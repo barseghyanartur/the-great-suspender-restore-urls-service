@@ -49,7 +49,8 @@
             </b-form-group>
 
             <b-form-group id="extensionId-group"
-                          label="ID of The Great Suspender extension:"
+                          label="ID of The Great Suspender extension.
+                          If you leave this argument empty, regular expression match will be used:"
                           label-for="extensionId">
               <b-form-input
                 id="extensionId"
