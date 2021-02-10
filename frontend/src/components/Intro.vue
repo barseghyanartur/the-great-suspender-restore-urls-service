@@ -10,11 +10,13 @@
           of 2021-02-04) that it has been banned by Google Chrome for being a malware.
           </p>
           <p>
-          The last-known-good-version on GitHub, release
-          <a href="https://github.com/greatsuspender/thegreatsuspender/releases/tag/v7.1.6">v7.1.6</a>,
-          works well for me, if installed from source. However, your saved
-          tabs won't reload as something has changed in between the `good` and the `bad`
-          releases.
+          The <a href="https://chrome.google.com/webstore/detail/the-marvellous-suspender/noogafoofpebimajpfpamcfhoaifemoa">Marvellous Suspender</a>
+          (<a href="https://github.com/gioxx/MarvellousSuspender">fork</a> of the
+          last-known-good-version The Great Suspender release
+          <a href="https://github.com/greatsuspender/thegreatsuspender/releases/tag/v7.1.6">v7.1.6 </a>),
+          works well for me. However, your existing suspended tabs (suspended by The
+          Great Suspender) won't reload as something has changed in between the `good`
+          and the `bad` releases.
           </p>
           <p>
           What to do? Would you just loose all precious URLs and saved sessions? If you
@@ -49,11 +51,10 @@
           <h3>Online (this service)</h3>
           <p>
           1. Use the <a href="https://chrome.google.com/webstore/detail/freshstart-cross-browser/nmidkjogcjnnlfimjcedenagjfacpobb">FreshStart - Cross Browser Session Manager</a>
-             extension to export all your tabs into a JSON and save it into a file (for
-             instance, name it <u>tabs.json</u>).
+             extension to export all your tabs into a JSON and copy the JSON content into clipboard.
           </p>
           <p>
-            2. Paste the contents of the <u>tabs.json</u> in the <u>Data</u> field
+            2. Paste the copied JSON content from clipboard into the <u>Data</u> field
                <router-link to="/index.html">here</router-link> and press submit to fix your
                broken tabs.
           </p>
